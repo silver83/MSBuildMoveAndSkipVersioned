@@ -1,9 +1,13 @@
 Configure and deploy the iis site once manually and deploy once via "import from package"
 
 Run these:
+
 msbuild  .\WebApplication1.csproj /p:VisualStudioVersion=11.0 /p:PublishProfile=Test /p:DeployOnBuild=true /p:StaticsVersion=4.0
+
 Packages\Test\Package.deploy.cmd /y
+
 msbuild  .\WebApplication1.csproj /p:VisualStudioVersion=11.0 /p:PublishProfile=Test /p:DeployOnBuild=true /p:StaticsVersion=3.0
+
 Packages\Test\Package.deploy.cmd /y
 
 
