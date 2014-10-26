@@ -1,0 +1,1 @@
+﻿msbuild  .\WebApplication1.csproj /p:VisualStudioVersion=11.0 /p:PublishProfile=Test /p:DeployOnBuild=true /p:StaticsVersion=3.0

@@ -1,0 +1,8 @@
+Microsoft (R) Build Engine version 4.0.30319.18408
+[Microsoft .NET Framework, version 4.0.30319.18444]
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+MSBUILD : error MSB1006: Property is not valid.
+Switch: Configuration:Release
+
+For switch syntax, type "MSBuild /help"
