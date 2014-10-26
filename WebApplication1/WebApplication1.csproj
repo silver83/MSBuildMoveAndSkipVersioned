@@ -165,7 +165,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Parameters.xml" />
     <Content Include="Statics\JS\bla.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -220,13 +219,11 @@
   </Target>
   <Target Name="AfterBuild">
   </Target> -->
-
   <!-- Start custom como template build step - move statics to versioned folder -->
-
   <PropertyGroup>
     <AfterAddIisSettingAndFileContentsToSourceManifest>AddCustomSkipRules</AfterAddIisSettingAndFileContentsToSourceManifest>
   </PropertyGroup>
-  <Target Name="AddCustomSkipRules" >
+  <Target Name="AddCustomSkipRules">
     <Message Text="Adding Custom Skip Rules" />
     <ItemGroup>
       <MsDeploySkipRules Include="SkipFilesInFilesFolder">
@@ -256,6 +253,5 @@
     <Move SourceFiles="@(Statics)" DestinationFolder="$(PackageRoot)\Public\Statics\$(StaticsVersion)\%(Statics.RecursiveDir)" />
     <RemoveDir Directories="@(StaticsFolder)" />
   </Target>
-  
   <!-- End custom como template build step -->
 </Project>
