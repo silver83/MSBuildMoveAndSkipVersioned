@@ -225,6 +225,7 @@
   </PropertyGroup>
   <Target Name="AddCustomSkipRules">
     <Message Text="Adding Custom Skip Rules" />
+    <Message Text="StaticsVersion is $(StaticsVersion)" />
     <ItemGroup>
       <MsDeploySkipRules Include="SkipFilesInFilesFolder">
         <SkipAction>Delete</SkipAction>
@@ -240,7 +241,7 @@
       </MsDeploySkipRules>
     </ItemGroup>
   </Target>
-  <Target Name="move_robots_in_msbuild" AfterTargets="PipelineCopyAllFilesToOneFolderForMsdeploy">
+  <Target Condition=" '$(StaticsVersion)' != '' "  Name="move_robots_in_msbuild" AfterTargets="PipelineCopyAllFilesToOneFolderForMsdeploy">
     <PropertyGroup>
       <PackageRoot>obj\$(ConfigurationName)\Package\PackageTmp</PackageRoot>
       <StaticsRoot>$(PackageRoot)\Statics</StaticsRoot>
