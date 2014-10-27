@@ -15,7 +15,7 @@ In the source folder you have
 `Statics\[some files]`
 
 After packaging with a /p:StaticsVersion=5.0 and publishing you'll get 
-`Statics\5.0\[some files]`
+`Public\Statics\5.0\[some files]`
 
 and any old version of Statics folder will not be overrun during publish.
 
